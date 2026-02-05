@@ -1,13 +1,14 @@
 ```mermaid
-sequenceDiagram
-actor user
+    sequenceDiagram
+        actor user
         participant browser
         participant server
-user->>browser: Clicks Save in notes form
-browser->>server: POST user input to https://studies.cs.helsinki.fi/exampleapp/new_note
-activate server
+
+        user->>browser: Clicks Save in notes form
+        browser->>server: POST user input to https://studies.cs.helsinki.fi/exampleapp/new_note
+        activate server
         Note right of server: The server saves user input
-server-->>browser: Returning response
+        server-->>browser: Returning response
         deactivate server
         Note right of browser: Response triggers Redirect
 
@@ -34,4 +35,4 @@ server-->>browser: Returning response
         deactivate server
 
         Note right of browser: The browser executes the callback function that renders all notes, including the newly saved one
-        ```
+```
